@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,6 +14,7 @@ import classes from './index.module.scss'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   const pathname = usePathname()
+
   return (
     <nav
       className={[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide]
@@ -21,7 +23,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
     >
       <Gutter className={classes.wrap}>
         <Link href="/">
-          <Image src="/logo_pc.png" alt="logo" width={150} height={50} />
+          <Image src="/logo_pc.png" alt="logo" width={170} height={50} />
         </Link>
 
         <HeaderNav header={header} />
@@ -29,4 +31,5 @@ const HeaderComponent = ({ header }: { header: Header }) => {
     </nav>
   )
 }
+
 export default HeaderComponent
